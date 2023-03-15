@@ -1,5 +1,7 @@
 package ru.yandex.praktikum.api_yandex_scooter.order;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -28,7 +30,9 @@ public class GetOrderListTest {
     }
 
     @Test
-    public void checkResponseTheOrderListIsReturn() { //TODO
+    @DisplayName("Check list Order 200 OK the response body returns a list of orders of /orders")
+    @Description("Check (Get) list Order the response body returns a list of orders")
+    public void checkResponseTheOrderListIsReturn() {
 
         ordersClient.getListOrder(null)
                 .assertThat()

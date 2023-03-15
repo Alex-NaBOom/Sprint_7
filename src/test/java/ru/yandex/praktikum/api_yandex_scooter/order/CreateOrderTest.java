@@ -1,5 +1,7 @@
 package ru.yandex.praktikum.api_yandex_scooter.order;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -67,7 +69,9 @@ public class CreateOrderTest {
     }
 
     @Test
-    public void CreatedOrdersWithValidData() {   //  TODO заменить название теста
+    @DisplayName("Check created Order 201 OK with parameterized valid data + color of /orders")
+    @Description("Check created Orders with valid data + color")
+    public void CreatedOrdersWithValidDataColor() {
         Orders orders = new Orders (firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, color);
 
          ordersClient.createOrder(orders)

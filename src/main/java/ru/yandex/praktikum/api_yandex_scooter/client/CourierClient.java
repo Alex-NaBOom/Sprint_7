@@ -13,7 +13,7 @@ public class CourierClient extends ScooterRestClient {
     private static final String COURIER_URI = BASE_URI + "courier/";
 
     @Step("Create courier {courier}")
-    public ValidatableResponse create(Courier courier) {
+    public ValidatableResponse createCourier(Courier courier) {
         return given()
                 .spec(getBaseReqSpec())
                 .body(courier)
